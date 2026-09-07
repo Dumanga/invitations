@@ -68,34 +68,6 @@ export default function Story() {
             </p>
           </div>
         </Reveal>
-
-        {/* Timeline */}
-        <div className="mt-12 border-t border-gold-soft/50 pt-10">
-          <Reveal>
-            <p className="text-center text-[11px] uppercase tracking-[0.34em] text-maroon">
-              A Journey Together
-            </p>
-          </Reveal>
-          <div className="mx-auto mt-8 max-w-2xl space-y-8">
-            {wedding.story.timeline.map((item, i) => (
-              <Reveal key={item.year} delay={0.08 * i}>
-                <div className="grid grid-cols-[72px_1fr] items-start gap-5 sm:grid-cols-[96px_1fr] sm:gap-8">
-                  <span className="font-names pt-0.5 text-3xl italic text-gold sm:text-4xl">
-                    {item.year}
-                  </span>
-                  <div className="border-b border-gold-soft/40 pb-7">
-                    <h4 className="font-display text-lg tracking-[0.08em] text-maroon-deep sm:text-xl">
-                      {item.title}
-                    </h4>
-                    <p className="mt-2 leading-relaxed text-soft">
-                      {item.text}
-                    </p>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );

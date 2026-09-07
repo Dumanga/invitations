@@ -27,7 +27,7 @@ export const wedding = {
     {
       title: "Poruwa Ceremony",
       date: "13th November 2026",
-      time: "10:00 AM",
+      time: "9:02 AM",
       venue: "Hotel Divine Light, Monaragala",
       icon: "temple" as const,
     },

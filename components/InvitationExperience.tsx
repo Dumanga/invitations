@@ -10,7 +10,6 @@ import Events from "./sections/Events";
 import Footer from "./sections/Footer";
 import Gallery from "./sections/Gallery";
 import Hero from "./sections/Hero";
-import Rsvp from "./sections/Rsvp";
 import Story from "./sections/Story";
 import Venue from "./sections/Venue";
 import { MusicIcon, MusicOffIcon } from "./Icons";
@@ -57,6 +56,22 @@ export default function InvitationExperience() {
     setPhase("main");
   }, []);
 
+  // Warm the browser cache for every image the page needs.
+  useEffect(() => {
+    const a = wedding.assets;
+    for (const src of [
+      a.backdrop,
+      a.mandala,
+      a.peraharaLeft,
+      a.peraharaRight,
+      a.heroCouple,
+      a.loveStory,
+    ]) {
+      const img = new window.Image();
+      img.src = src;
+    }
+  }, []);
+
   // Safety net: if video playback stalls (power saving, hidden tab),
   // move on to the main page once the intro duration has passed.
   useEffect(() => {
@@ -91,6 +106,18 @@ export default function InvitationExperience() {
 
       <audio ref={audioRef} src={wedding.assets.music} loop preload="auto" />
 
+      {/* Buffer the intro video while the cover is showing so it starts instantly */}
+      {phase === "cover" && (
+        <video
+          src={wedding.assets.introVideo}
+          preload="auto"
+          muted
+          playsInline
+          aria-hidden
+          className="hidden"
+        />
+      )}
+
       <main className="relative">
         <Hero />
         <Story />
@@ -98,7 +125,7 @@ export default function InvitationExperience() {
         <Events />
         <Gallery />
         <Venue />
-        <Rsvp />
+        {/* RSVP section hidden for now — re-add <Rsvp /> (and its nav item) to restore it */}
         <Footer />
       </main>
 

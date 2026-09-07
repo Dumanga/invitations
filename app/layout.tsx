@@ -4,6 +4,7 @@ import {
   EB_Garamond,
   Playfair_Display,
 } from "next/font/google";
+import { wedding } from "@/lib/config";
 import "./globals.css";
 
 const ebGaramond = EB_Garamond({
@@ -44,6 +45,25 @@ export default function RootLayout({
       className={`${ebGaramond.variable} ${playfair.variable} ${cormorant.variable}`}
     >
       <body className="antialiased">
+        {/* Preload everything the cover and main screen need (React hoists these into <head>) */}
+        <link rel="preload" href={wedding.assets.backdrop} as="image" />
+        <link rel="preload" href={wedding.assets.mandala} as="image" />
+        <link rel="preload" href={wedding.assets.peraharaLeft} as="image" />
+        <link rel="preload" href={wedding.assets.peraharaRight} as="image" />
+        <link rel="preload" href={wedding.assets.heroCouple} as="image" />
+        <link rel="preload" href={wedding.assets.loveStory} as="image" />
+        <link
+          rel="preload"
+          href={wedding.assets.introVideo}
+          as="video"
+          type="video/mp4"
+        />
+        <link
+          rel="preload"
+          href={wedding.assets.music}
+          as="audio"
+          type="audio/mpeg"
+        />
         {children}
       </body>
     </html>

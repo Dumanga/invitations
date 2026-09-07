@@ -5,7 +5,6 @@ import {
   CalendarIcon,
   HeartIcon,
   HomeIcon,
-  MailIcon,
   MapPinIcon,
 } from "./Icons";
 
@@ -14,7 +13,6 @@ const items = [
   { id: "story", label: "Our Story", Icon: HeartIcon },
   { id: "events", label: "Events", Icon: CalendarIcon },
   { id: "venue", label: "Venue", Icon: MapPinIcon },
-  { id: "rsvp", label: "RSVP", Icon: MailIcon },
 ];
 
 export default function BottomNav() {
