@@ -1,4 +1,4 @@
-:HL["/invitations/_next/static/chunks/43boxm_0skarc.css","style"]
+:HL["/invitations/_next/static/chunks/3_kzgzvv8wvkp.css","style"]
 :HL["/invitations/_next/static/media/01e4147cff8141ee-s.p.3huc2loe0ie8a.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/invitations/_next/static/media/2a65768255d6b625-s.p.3u4lli0-axodc.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 :HL["/invitations/_next/static/media/4ee71d90e0f663bd-s.p.33jraz4m6n5g3.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
@@ -13,4 +13,4 @@
 :HL["/invitations/assets/love-story-couple-Photoroom.png","image"]
 :HL["/invitations/assets/sunset-drive-intro.mp4","video",{"type":"video/mp4"}]
 :HL["/invitations/assets/bg-music.mp3","audio",{"type":"audio/mpeg"}]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"xQ8dSm066DFxeoP7rwjhF"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"ZsDqNQQVKT8ZqG_6TCzla"}
