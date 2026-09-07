@@ -1,2 +1,10 @@
-:HL["/invitations/_next/static/chunks/37e451kdcw_1o.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"oVSDNR82LKUqYJQQjgv8I"}
+:HL["/invitations/_next/static/chunks/43boxm_0skarc.css","style"]
+:HL["/invitations/assets/backdrop.webp","image"]
+:HL["/invitations/assets/mandala-art-in-top.svg","image"]
+:HL["/invitations/assets/perahara-left.webp","image"]
+:HL["/invitations/assets/perahara-right.webp","image"]
+:HL["/invitations/assets/hero-section-couple-Photoroom.png","image"]
+:HL["/invitations/assets/love-story-couple-Photoroom.png","image"]
+:HL["/invitations/assets/sunset-drive-intro.mp4","video",{"type":"video/mp4"}]
+:HL["/invitations/assets/bg-music.mp3","audio",{"type":"audio/mpeg"}]
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"xQ8dSm066DFxeoP7rwjhF"}
