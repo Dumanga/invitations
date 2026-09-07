@@ -14,10 +14,11 @@ import Story from "./sections/Story";
 import Venue from "./sections/Venue";
 import { MusicIcon, MusicOffIcon } from "./Icons";
 
-type Phase = "cover" | "video" | "main";
+type Phase = "loading" | "cover" | "video" | "main";
 
 export default function InvitationExperience() {
-  const [phase, setPhase] = useState<Phase>("cover");
+  const [phase, setPhase] = useState<Phase>("loading");
+  const [progress, setProgress] = useState(0);
   const [musicOn, setMusicOn] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -56,20 +57,60 @@ export default function InvitationExperience() {
     setPhase("main");
   }, []);
 
-  // Warm the browser cache for every image the page needs.
+  // Preload every image and buffer the intro video before showing the cover.
   useEffect(() => {
     const a = wedding.assets;
-    for (const src of [
+    const images = [
       a.backdrop,
       a.mandala,
       a.peraharaLeft,
       a.peraharaRight,
       a.heroCouple,
       a.loveStory,
-    ]) {
+    ];
+    const total = images.length + 1; // +1 for the intro video
+    const startedAt = Date.now();
+    let done = 0;
+    let finished = false;
+
+    const finish = () => {
+      if (finished) return;
+      finished = true;
+      // Keep the loader visible at least briefly so it never flashes.
+      const wait = Math.max(0, 900 - (Date.now() - startedAt));
+      setTimeout(() => {
+        setProgress(100);
+        setPhase((p) => (p === "loading" ? "cover" : p));
+      }, wait);
+    };
+
+    const bump = () => {
+      done += 1;
+      setProgress(Math.min(100, Math.round((done / total) * 100)));
+      if (done >= total) finish();
+    };
+
+    for (const src of images) {
       const img = new window.Image();
+      img.onload = bump;
+      img.onerror = bump;
       img.src = src;
     }
+
+    const video = document.createElement("video");
+    video.preload = "auto";
+    video.muted = true;
+    video.oncanplaythrough = () => {
+      video.oncanplaythrough = null;
+      bump();
+    };
+    video.onerror = () => bump();
+    video.src = a.introVideo;
+    video.load();
+
+    // Never keep guests waiting on a slow connection.
+    const timeout = setTimeout(finish, 12_000);
+    return () => clearTimeout(timeout);
   }, []);
 
   // Safety net: if video playback stalls (power saving, hidden tab),
@@ -105,18 +146,6 @@ export default function InvitationExperience() {
       />
 
       <audio ref={audioRef} src={wedding.assets.music} loop preload="auto" />
-
-      {/* Buffer the intro video while the cover is showing so it starts instantly */}
-      {phase === "cover" && (
-        <video
-          src={wedding.assets.introVideo}
-          preload="auto"
-          muted
-          playsInline
-          aria-hidden
-          className="hidden"
-        />
-      )}
 
       <main className="relative">
         <Hero />
@@ -212,6 +241,46 @@ export default function InvitationExperience() {
       <AnimatePresence>
         {phase === "cover" && (
           <Cover key="cover" onOpen={openInvitation} />
+        )}
+      </AnimatePresence>
+
+      {/* Loading screen shown until every asset is preloaded */}
+      <AnimatePresence>
+        {phase === "loading" && (
+          <motion.div
+            key="loader"
+            className="fixed inset-0 z-[80] flex flex-col items-center justify-center bg-[#f7efdd] px-8"
+            exit={{ opacity: 0, transition: { duration: 0.8, ease: "easeInOut" } }}
+          >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={wedding.assets.mandala}
+              alt=""
+              className="animate-loader-spin h-28 w-28 opacity-70 sm:h-36 sm:w-36"
+            />
+
+            <p className="font-names mt-8 text-3xl italic text-maroon sm:text-4xl">
+              {wedding.bride} <span className="text-gold">&amp;</span>{" "}
+              {wedding.groom}
+            </p>
+
+            <div className="mt-3 flex items-center gap-3">
+              <span className="h-px w-10 bg-gold-soft/70" />
+              <span className="block h-1 w-1 rotate-45 bg-gold" />
+              <span className="h-px w-10 bg-gold-soft/70" />
+            </div>
+
+            <div className="mt-8 h-[3px] w-48 overflow-hidden rounded-full bg-gold-soft/30 sm:w-56">
+              <div
+                className="h-full rounded-full bg-gold transition-[width] duration-500 ease-out"
+                style={{ width: `${progress}%` }}
+              />
+            </div>
+
+            <p className="mt-4 text-[10px] uppercase tracking-[0.35em] text-soft">
+              Preparing your invitation
+            </p>
+          </motion.div>
         )}
       </AnimatePresence>
     </div>

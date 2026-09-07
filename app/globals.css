@@ -62,6 +62,10 @@ body {
   animation: slow-spin 90s linear infinite;
 }
 
+.animate-loader-spin {
+  animation: slow-spin 16s linear infinite;
+}
+
 /* Scroll-down mouse indicator */
 @keyframes scroll-dot {
   0% {
