@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-body: var(--font-eb-garamond);
+  --font-display: var(--font-playfair);
+  --font-names: var(--font-cormorant);
+}
+
+@theme {
+  --color-maroon: #7a1f1a;
+  --color-maroon-deep: #5c140f;
+  --color-gold: #b89a47;
+  --color-gold-soft: #d2b97a;
+  --color-gold-light: #e8d8a4;
+  --color-ink: #473c1f;
+  --color-soft: #7c6a48;
+  --color-cream: #fbf5e6;
+  --color-parchment: #f7efdd;
+  --color-footer-brown: #2b1a12;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body), Georgia, serif;
+  color: var(--color-ink);
+  background-color: #f4ecdb;
+}
+
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+.font-names {
+  font-family: var(--font-names), Georgia, serif;
+}
+
+/* Slow floating animation for decorative elements */
+@keyframes gentle-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Slow continuous rotation for the mandala artwork */
+@keyframes slow-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-slow-spin {
+  animation: slow-spin 90s linear infinite;
+}
+
+/* Scroll-down mouse indicator */
+@keyframes scroll-dot {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  70% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+.animate-scroll-dot {
+  animation: scroll-dot 1.6s ease-in-out infinite;
+}
