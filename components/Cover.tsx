@@ -58,11 +58,13 @@ export default function Cover({ onOpen }: { onOpen: () => void }) {
           {wedding.groom}
         </motion.h1>
 
+        {/* Date hidden on the cover — it is shown on the main invitation card.
+            Remove the `hidden` class to bring it back. */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.1, duration: 0.9 }}
-          className="mt-5 text-base text-ink sm:text-lg"
+          className="mt-5 hidden text-base text-ink sm:text-lg"
         >
           {wedding.dateLabel.day}, {wedding.dateLabel.date}
           <sup>{wedding.dateLabel.ordinal}</sup> {wedding.dateLabel.month}{" "}
