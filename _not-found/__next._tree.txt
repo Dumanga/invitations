@@ -1,4 +1,4 @@
-:HL["/invitations/_next/static/chunks/3_kzgzvv8wvkp.css","style"]
+:HL["/invitations/_next/static/chunks/1h5cqief5297n.css","style"]
 :HL["/invitations/assets/backdrop.webp","image"]
 :HL["/invitations/assets/mandala-art-in-top.svg","image"]
 :HL["/invitations/assets/perahara-left.webp","image"]
@@ -7,4 +7,4 @@
 :HL["/invitations/assets/love-story-couple-Photoroom.png","image"]
 :HL["/invitations/assets/sunset-drive-intro.mp4","video",{"type":"video/mp4"}]
 :HL["/invitations/assets/bg-music.mp3","audio",{"type":"audio/mpeg"}]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"ZsDqNQQVKT8ZqG_6TCzla"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}},"staleTime":300,"buildId":"OfsEaZSpDEUx2lo2x6fkO"}
