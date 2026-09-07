@@ -66,6 +66,26 @@ body {
   animation: slow-spin 16s linear infinite;
 }
 
+/* Expanding ripple ring around the Open Invitation button */
+@keyframes invite-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  70% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
+
+.animate-invite-ring {
+  animation: invite-ring 2.2s ease-out infinite;
+}
+
 /* Scroll-down mouse indicator */
 @keyframes scroll-dot {
   0% {

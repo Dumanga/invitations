@@ -69,16 +69,48 @@ export default function Cover({ onOpen }: { onOpen: () => void }) {
           {wedding.dateLabel.year}
         </motion.p>
 
-        <motion.button
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.4, duration: 0.9 }}
-          onClick={onOpen}
-          className="mt-9 inline-flex items-center gap-2.5 rounded-full border border-maroon/70 bg-cream/40 px-8 py-3.5 text-[12px] uppercase tracking-[0.3em] text-maroon backdrop-blur-sm transition hover:bg-maroon hover:text-cream"
+          className="relative mt-9"
         >
-          <RingsIcon className="h-4 w-4" />
-          Open Invitation
-        </motion.button>
+          {/* Expanding ripple rings that invite a tap */}
+          <span
+            aria-hidden
+            className="animate-invite-ring pointer-events-none absolute inset-0 rounded-full border-2 border-maroon/50"
+          />
+          <span
+            aria-hidden
+            className="animate-invite-ring pointer-events-none absolute inset-0 rounded-full border-2 border-maroon/50 [animation-delay:1.1s]"
+          />
+          <motion.button
+            onClick={onOpen}
+            animate={{ scale: [1, 1.06, 1] }}
+            transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+            className="relative inline-flex items-center gap-2.5 rounded-full border border-maroon/70 bg-cream/60 px-8 py-3.5 text-[12px] uppercase tracking-[0.3em] text-maroon shadow-[0_6px_24px_rgba(122,31,26,0.25)] backdrop-blur-sm transition hover:bg-maroon hover:text-cream"
+          >
+            <RingsIcon className="h-4 w-4" />
+            Open Invitation
+          </motion.button>
+        </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: [0, 1, 1, 0.4, 1] }}
+          transition={{ delay: 2.4, duration: 2.4, repeat: Infinity, repeatDelay: 0.4 }}
+          className="mt-5 flex items-center gap-2 text-[11px] uppercase tracking-[0.3em] text-maroon/80"
+        >
+          <motion.span
+            aria-hidden
+            animate={{ y: [0, -4, 0] }}
+            transition={{ duration: 1, repeat: Infinity, ease: "easeInOut" }}
+            className="text-base"
+          >
+            👆
+          </motion.span>
+          Tap the button to open
+        </motion.p>
       </div>
 
       {/* Perahera procession strip */}

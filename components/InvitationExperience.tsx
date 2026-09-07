@@ -5,6 +5,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { wedding } from "@/lib/config";
 import BottomNav from "./BottomNav";
 import Cover from "./Cover";
+import ScrollHint from "./ScrollHint";
 import Countdown from "./sections/Countdown";
 import Events from "./sections/Events";
 import Footer from "./sections/Footer";
@@ -159,6 +160,9 @@ export default function InvitationExperience() {
       </main>
 
       <BottomNav />
+
+      {/* "You can scroll down" nudge, shown 2s after the main page appears */}
+      {phase === "main" && <ScrollHint />}
 
       {/* Floating music toggle (visible after the invitation is opened) */}
       {phase === "main" && (
