@@ -10,8 +10,8 @@ import {
 import Reveal, { SectionHeading } from "../Reveal";
 
 function calendarUrl() {
-  const start = "20261113T030000Z"; // 8:30 AM +05:30
-  const end = "20261113T063000Z";
+  const start = "20261113T033200Z"; // 9:02 AM +05:30 (Poruwa ceremony)
+  const end = "20261113T063200Z";
   const params = new URLSearchParams({
     action: "TEMPLATE",
     text: `Wedding of ${wedding.bride} & ${wedding.groom}`,

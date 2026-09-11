@@ -6,7 +6,7 @@ export const wedding = {
   groom: "Sisira",
   brideParents: "Mr. & Mrs. Samaranayaka",
   groomParents: "Mr. & Mrs. Wijethunga",
-  dateISO: "2026-11-13T08:30:00+05:30",
+  dateISO: "2026-11-13T09:02:00+05:30",
   dateLabel: { day: "Friday", date: 13, month: "November", year: 2026, ordinal: "th" },
   shortDate: "13 . 11 . 26",
   venue: {
@@ -18,18 +18,18 @@ export const wedding = {
   rsvpBy: "1st November 2026",
   events: [
     {
-      title: "Registration",
-      date: "13th November 2026",
-      time: "8:30 AM",
-      venue: "Hotel Divine Light, Monaragala",
-      icon: "calendar" as const,
-    },
-    {
       title: "Poruwa Ceremony",
       date: "13th November 2026",
       time: "9:02 AM",
       venue: "Hotel Divine Light, Monaragala",
       icon: "temple" as const,
+    },
+    {
+      title: "Registration",
+      date: "13th November 2026",
+      time: "10:06 AM",
+      venue: "Hotel Divine Light, Monaragala",
+      icon: "calendar" as const,
     },
   ],
   story: {
