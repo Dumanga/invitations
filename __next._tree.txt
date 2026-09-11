@@ -13,4 +13,4 @@
 :HL["/invitations/assets/love-story-couple-Photoroom.png","image"]
 :HL["/invitations/assets/sunset-drive-intro.mp4","video",{"type":"video/mp4"}]
 :HL["/invitations/assets/bg-music.mp3","audio",{"type":"audio/mpeg"}]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"KJXxjoulKZSTEuiY3RuKZ"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}},"staleTime":300,"buildId":"z6m4c_9lyNmgbHd6Fl4_j"}
