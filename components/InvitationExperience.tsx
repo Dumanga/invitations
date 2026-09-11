@@ -9,7 +9,6 @@ import ScrollHint from "./ScrollHint";
 import Countdown from "./sections/Countdown";
 import Events from "./sections/Events";
 import Footer from "./sections/Footer";
-import Gallery from "./sections/Gallery";
 import Hero from "./sections/Hero";
 import Story from "./sections/Story";
 import Venue from "./sections/Venue";
@@ -153,7 +152,7 @@ export default function InvitationExperience() {
         <Story />
         <Countdown />
         <Events />
-        <Gallery />
+        {/* Gallery section hidden for now — re-add <Gallery /> (and its import) to restore it */}
         <Venue />
         {/* RSVP section hidden for now — re-add <Rsvp /> (and its nav item) to restore it */}
         <Footer />
